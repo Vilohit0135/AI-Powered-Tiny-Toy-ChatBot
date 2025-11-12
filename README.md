@@ -57,12 +57,12 @@ Everything — from the tokenizer to the dialogue flow — is **manually coded**
 
 ```mermaid
 flowchart LR
-A[User Input] --> B[Tokenizer]
-B --> C[Intent Classifier (Naive Bayes)]
-C --> D[Entity Extractor (Regex)]
-D --> E[Dialogue Manager (FSM)]
-E --> F[Response Generator (Templates)]
-F --> G[Reply to User]
+    A[User Input] --> B[Tokenizer]
+    B --> C[Intent Classifier: Naive Bayes]
+    C --> D[Entity Extractor: Regex]
+    D --> E[Dialogue Manager: Finite-State Machine]
+    E --> F[Response Generator: Templates]
+    F --> G[Bot Reply to User]
 
 🕵️‍♂️ Entity Extraction
 Regex rules identify cities and dates in user messages.
