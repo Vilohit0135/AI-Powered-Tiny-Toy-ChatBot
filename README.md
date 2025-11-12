@@ -102,6 +102,12 @@ P(intent | text) ∝ P(intent) × Π P(word_i | intent)
 \]
 
 A **log-probability** version is implemented for numerical stability.
+    A[User Input] --> B[Tokenizer]
+    B --> C[Intent Classifier: Naive Bayes]
+    C --> D[Entity Extractor: Regex]
+    D --> E[Dialogue Manager: Finite-State Machine]
+    E --> F[Response Generator: Templates]
+    F --> G[Bot Reply to User]
 
 ---
 
@@ -210,3 +216,42 @@ Bot: The weather in Mumbai tomorrow looks pleasant with mild temperatures.
 ---
 
 ⭐ **If you found this project helpful, don’t forget to give it a star!**
+
+🧪 Functions Summary
+Function	Purpose
+tokenize(text)	Lowercase, clean punctuation, split text
+NaiveBayesIntents.fit()	Train on example sentences
+NaiveBayesIntents.predict()	Detect intent
+extract_entities(text)	Find cities/dates
+DialogueManager.next_action()	Determine next step
+nlg(action, params)	Generate final reply
+
+🧩 Supported Intents
+Intent	Example	Behavior
+greet	“hello”	Bot greets back
+smalltalk	“how are you?”	Small talk
+check_weather	“weather in delhi?”	Responds with mock weather
+book_flight	“book flight to paris”	Begins booking flow
+goodbye	“bye”	Ends chat
+
+🚀 Future Enhancements
+✅ Short term
+
+Add more cities & date patterns
+
+Randomize response templates
+
+💡 Next level
+
+Replace bag-of-words with TF-IDF or word embeddings
+
+Add context memory (multi-turn awareness)
+
+Integrate live APIs (Weather, Flight search)
+
+Create a web or Telegram interface
+
+👨‍💻 Author
+K. Vilohit
+Full-Stack Developer | AI & ML Engineer
+📍 Bengaluru, India
